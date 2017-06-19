@@ -183,13 +183,13 @@
 \newcommand{\includeabstract}{
 \iflanguage{english}{
 % include English and German abstracts
-\input{sections/abstract_en.tex}
+\input{sections/frontmatter/abstract_en.tex}
 \begin{otherlanguage}{ngerman}
-\input{sections/abstract_de.tex}
+\input{sections/frontmatter/abstract_de.tex}
 \end{otherlanguage}
 }{
 % include only German abstract
-\include{sections/abstract_de}
+\include{sections/frontmatter/abstract_de}
 }
 }
 

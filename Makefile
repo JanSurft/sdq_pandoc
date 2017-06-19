@@ -1,9 +1,9 @@
 PY=python
 #PANDOC=$(BASEDIR)/../bin/pandoc
-PANDOC=ba-pandoc
+PANDOC=pandoc
 
 BASEDIR=$(CURDIR)
-INPUTDIR=$(BASEDIR)/content
+INPUTDIR=$(BASEDIR)/sections
 MAINMATTER=$(INPUTDIR)/mainmatter
 FRONTMATTER=$(INPUTDIR)/frontmatter
 BACKMATTER=$(INPUTDIR)/backmatter
@@ -12,7 +12,7 @@ TEMPLATEDIR=$(BASEDIR)/templates
 STYLEDIR=$(BASEDIR)
 HEADERDIR=$(BASEDIR)/header
 
-BIBFILE=$(BASEDIR)/literature.bib
+BIBFILE=$(BASEDIR)/thesis.bib
 
 MKDIR_P = mkdir -p
 
@@ -35,13 +35,10 @@ dirs:
 	${MKDIR_P} ${OUTPUTDIR}
 
 pdf: dirs
-	$(PANDOC) "$(MAINMATTER)"/*.md "$(INPUTDIR)"/*.yaml \
+	$(PANDOC) "$(MAINMATTER)"/*.md "$(BASEDIR)"/*.yaml \
 	-F pandoc-crossref \
 	-F pandoc-citeproc \
 	-o "$(OUTPUTDIR)/thesis.pdf" \
-	-H "$(HEADERDIR)/header.tex" \
-	-B "$(FRONTMATTER)"/*.md \
-	-A "$(BACKMATTER)"/*.md \
 	--bibliography="$(BIBFILE)" 2>pandoc.log \
 	--template="$(TEMPLATEDIR)/template.tex" \
 	--highlight-style pygments \
@@ -49,12 +46,10 @@ pdf: dirs
 	-N
 
 tex: dirs
-	$(PANDOC) "$(INPUTDIR)"/*.md \
+	$(PANDOC) "$(MAINMATTER)"/*.md  "$(BASEDIR)"/*.yaml \
 	-o "$(OUTPUTDIR)/thesis.tex" \
-	-H "$(STYLEDIR)/preamble.tex" \
 	--bibliography="$(BIBFILE)" \
 	-N \
-	--csl="$(STYLEDIR)/ref_format.csl" \
 	--latex-engine=xelatex 
 
 docx: dirs
