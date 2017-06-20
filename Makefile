@@ -42,6 +42,7 @@ pdf: dirs
 	--bibliography="$(BIBFILE)" 2>pandoc.log \
 	--template="$(TEMPLATEDIR)/template.tex" \
 	--highlight-style pygments \
+	--top-level-division=chapter \
 	--latex-engine=xelatex \
 	-N
 

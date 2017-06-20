@@ -1,3 +1,33 @@
 ---
+author: My Name
+title: Mein Titel
+subtitle: Untertitel
+thesistype: Bachelorarbeit
 
+## Change the institute here, ``IPD'' is default
+#myinstitute: 
+
+## You can put a logo in the ``logos'' directory and include it here
+## instead of the SDQ logo
+#grouplogo: relative/path/to/logo
+
+## Alternatively, you can disable the group logo
+nogrouplogo: false
+
+## The reviewers are the professors that grade your thesis
+reviewerone: Prof A
+reviewertwo: Prof B
+
+## The advisors are PhDs or Postdocs
+advisorone: M Sc A
+## The second advisor can be omitted
+advisortwo: M Sc B
+
+## Please enter the start end end time of your thesis
+start-editingtime: x.x.20xx
+end-editingtime: x.x.20xx
+
+## Do not change
+chapters: true
+autoSectionLabels: true
 ...

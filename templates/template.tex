@@ -1,33 +1,39 @@
 \documentclass[english,draft]{sdqthesis}%% Name of the author
-\author{My Name}
+\author{author}
 
 %% Title (and possibly subtitle) of the thesis
-\title{Title of the Thesis\\
-Second Title Line}
+\title{$title$\\
+$subtitle$}
 
 %% Type of the thesis 
-\thesistype{Master's Thesis/Bachelor's Thesis}
+\thesistype{$thesistype$}
 
 %% Change the institute here, ``IPD'' is default
-% \myinstitute{Institute for \dots}
+$if(myinstitute)$
+\myinstitute{$myinstitute$}
+$endif$
 
 %% You can put a logo in the ``logos'' directory and include it here
 %% instead of the SDQ logo
-% \grouplogo{myfile}
+$if(grouplogo)$
+\grouplogo{$grouplogo$}
+$endif$
 %% Alternatively, you can disable the group logo
-% \nogrouplogo
+$if(nogrouplogo)$
+\nogrouplogo
+$endif$
 
 %% The reviewers are the professors that grade your thesis
-\reviewerone{Prof. A}
-\reviewertwo{Prof. B}
+\reviewerone{$reviewerone$}
+\reviewertwo{$reviewertwo$}
 
 %% The advisors are PhDs or Postdocs
-\advisorone{M.Sc. C}
+\advisorone{$advisorone$}
 %% The second advisor can be omitted
-\advisortwo{M.Sc. D}
+\advisortwo{$advisortwo$}
 
 %% Please enter the start end end time of your thesis
-\editingtime{xx. Month 20XX}{xx. Month 20XX}
+\editingtime{$start-editingtime$}{$end-editingtime$}
 
 \settitle
 
