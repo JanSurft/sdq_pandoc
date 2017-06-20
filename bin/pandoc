@@ -1,2 +1,2 @@
 #!/bin/bash
-exec docker run --rm -i --user="root:root" --net=none -v "$PWD":/data -v "/home":/home -t tex-docker-v1 pandoc "$@"
+exec docker run --rm -i --user="root:root" --net=none -v "$PWD":/data -v "/Users":/Users -v "/home":/home -t tex-docker-v1 pandoc "$@"

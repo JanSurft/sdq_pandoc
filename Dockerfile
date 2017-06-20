@@ -48,6 +48,8 @@ RUN cabal install pandoc --enable-tests
 
 RUN apt-get install -y --no-install-recommends texlive-xetex
 
+RUN mkdir -p /Users
+
 ENV PATH="/root/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:${PATH}"
 WORKDIR /data
 VOLUME ["/data"]
