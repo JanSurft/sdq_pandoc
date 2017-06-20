@@ -1,6 +1,6 @@
 PY=python
 #PANDOC=$(BASEDIR)/../bin/pandoc
-PANDOC=pandoc
+PANDOC=bin/pandoc
 
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/sections

@@ -1,0 +1,6 @@
+#!/bin/bash
+#dockercmd pandoc "$@"
+#echo "$HOME/.pandoc"
+#exec docker run --rm -i --user="root:root" --net=none -v "/home":/home -t tex-docker-v1 pandoc --top-level-division=chapter --number-sections -F pandoc-crossref -F pandoc-citeproc --data-dir="$HOME/.pandoc" "$@"
+exec docker run --rm -i --user="root:root" --net=none -v "$PWD":/data -v "/home":/home -t tex-docker-v1 pandoc "$@"
+#exec docker run --rm -i --user="root:root" --net=none -v "$PWD":/data -t tex-docker-v1 pandoc "$@"
